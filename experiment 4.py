@@ -1,0 +1,27 @@
+numbers=[1,2,3,4,5,6]
+print("original List",numbers)
+print("length of the List:",len(numbers))
+numbers.append(7)
+print("after append:",numbers)
+numbers.insert(8,9)
+print("after insert:",numbers)
+numbers.remove(3)
+print("after remove",numbers)
+numbers.pop()
+print("after pop",numbers)
+print("after count",numbers.count(3))
+print("after index",numbers.index(4))
+numbers.reverse()
+print("after reverse",numbers)
+new_list=numbers.copy()
+print("after copy",new_list)
+numbers.extend([3])
+print("after extend",numbers)
+
+print("after max",max(numbers))
+
+print("after min",min(numbers))
+
+print("after sum",sum(numbers))
+numbers.clear()
+print("after clear",numbers)
