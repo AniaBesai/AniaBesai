@@ -1,0 +1,41 @@
+To write and execute a Python program to implement the re (Regular Expression) module for validating email IDs and mobile numbers.
+2. Algorithm
+Start the program.
+Import the re module.
+Accept an email ID or mobile number from the user.
+Define a regular expression pattern for email validation.
+Define a regular expression pattern for mobile number validation.
+Use the re.fullmatch() function to check whether the input matches the email pattern.
+If it matches, display "Valid email id".
+Otherwise, check whether the input matches the mobile number pattern.
+If it matches, display "Valid mobile no."
+Otherwise, display "Invalid email id or mobile no."
+Stop the program.
+
+3. Source Code
+
+
+import re
+
+data = input("enter email pattern : ")
+
+email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+
+mobile_pattern = r'^[0-9]{10}$'
+
+if re.fullmatch(email_pattern, data):
+    print("valid emailid")
+
+elif re.fullmatch(mobile_pattern, data):
+    print("valid mobile no.")
+
+else:
+    print("invalid email id or mobile no.")
+
+Output
+enter email pattern : abc@gmail.com
+valid emailid
+enter email pattern : 9876543210
+valid mobile no. 
+enter email pattern : abc123
+invalid email id or mobile no.
