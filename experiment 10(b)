@@ -1,0 +1,68 @@
+To write and execute a Python program to implement different types of data visualizations using Matplotlib and Pandas libraries.
+2. Algorithm
+Start the program.
+Import Pandas and Matplotlib libraries.
+Create a DataFrame containing Month and Sales.
+Create a line plot using plt.plot().
+Add title and axis labels.
+Create a bar plot using plt.bar().
+Create a scatter plot using plt.scatter().
+Create a histogram using plt.hist().
+Create a pie chart using plt.pie().
+Display each graph using plt.show().
+Stop the program.
+3. Source Code
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Sample Data
+df = pd.DataFrame({
+    "Month": ["Jan", "Feb", "Mar", "Apr"],
+    "Sales": [200, 250, 300, 290]
+})
+
+# 1. Line Plot
+plt.figure()
+plt.plot(df["Month"], df["Sales"])
+plt.title("Line Plot - Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.show()
+
+# 2. Bar Plot
+plt.figure()
+plt.bar(df["Month"], df["Sales"])
+plt.title("Bar Plot - Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.show()
+
+# 3. Scatter Plot
+plt.figure()
+plt.scatter(df["Month"], df["Sales"])
+plt.title("Scatter Plot - Monthly Sales")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.show()
+
+# 4. Histogram
+plt.figure()
+plt.hist(df["Sales"])
+plt.title("Histogram - Sales Distribution")
+plt.xlabel("Sales")
+plt.ylabel("Frequency")
+plt.show()
+
+# 5. Pie Chart
+plt.figure()
+plt.pie(df["Sales"], labels=df["Month"],
+        autopct="%1.1f%%")
+plt.title("Pie Chart - Sales Share")
+plt.show()
+
+  Month  Sales
+0   Jan    200
+1   Feb    250
+2   Mar    300
+3   Apr    290
