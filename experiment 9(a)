@@ -1,0 +1,135 @@
+Aim- implement numpy and pandas packages in python.
+
+algorithm
+Access individual elements using indexing and slicing.
+Create an array using np.arange(10).
+Modify selected elements of the array.
+Add two elements and display the result.
+Import the Pandas package as pd.
+Create a dictionary containing student details.
+Convert the dictionary into a DataFrame.
+Display the DataFrame using print().
+Display the first five and last five rows using head() and tail().
+Display information using info() and describe().
+Sort the DataFrame according to marks using sort_values().
+Stop the program.
+
+3. Source Code
+
+Program 1: NumPy Operations
+
+import numpy as np
+
+arr = np.array([10,20,30,40,50,12,33,89,23,65])
+
+print("array: ", arr)
+
+sorted_arr = np.sort(arr)
+print(sorted_arr)
+
+print("sum: ", np.sum(arr))
+print("accessing elements: ", arr[2])
+print("accessing elements: ", arr[0:4])
+print("accessing elements: ", arr[-1])
+print("minimum: ", np.min(arr))
+print("maximum: ", np.max(arr))
+
+import numpy as nm
+
+x = nm.arange(10)
+print("elements are: ", x)
+
+x[[2,5,8]] = 99
+print("after adding: ", x)
+
+print("addition of elements: ", x[3]+x[8])
+
+Output 
+array:  [10 20 30 40 50 12 33 89 23 65]
+
+[10 12 20 23 30 33 40 50 65 89]
+
+sum:  372
+accessing elements:  30
+accessing elements:  [10 20 30 40]
+accessing elements:  65
+minimum:  10
+maximum:  89
+
+elements are:  [0 1 2 3 4 5 6 7 8 9]
+
+after adding:  [ 0  1 99  3  4 99  6  7 99  9]
+
+addition of elements:  102
+
+Program 2: Pandas Operations
+
+import pandas as pd
+
+data = {
+    "name": ["a", "b", "c", "d"],
+    "marks": [80, 90, 85, 70],
+    "age": [20, 20, 19, 19],
+    "course": ["bca", "bca", "bba", "btech"],
+    "place": ["e", "f", "g", "h"]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+print("head: \n", df.head)
+print("tail: \n", df.tail)
+
+print("\n info:")
+df.info()
+
+print("\n describe: \n", df.describe())
+
+print("\n sorted: \n", df.sort_values("marks"))
+
+output
+  name  marks  age course place
+0    a     80   20    bca     e
+1    b     90   20    bca     f
+2    c     85   19    bba     g
+3    d     70   19  btech     h
+
+head:
+  name  marks  age course place
+0    a     80   20    bca     e
+1    b     90   20    bca     f
+2    c     85   19    bba     g
+3    d     70   19  btech     h
+
+tail:
+  name  marks  age course place
+0    a     80   20    bca     e
+1    b     90   20    bca     f
+2    c     85   19    bba     g
+3    d     70   19  btech     h
+
+info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 5 columns):
+name      4 non-null object
+marks     4 non-null int64
+age       4 non-null int64
+course    4 non-null object
+place     4 non-null object
+
+describe:
+
+           marks        age
+count   4.000000   4.000000
+mean   81.250000  19.500000
+min    70.000000  19.000000
+max    90.000000  20.000000
+
+sorted:
+
+  name  marks  age course place
+3    d     70   19  btech     h
+0    a     80   20    bca     e
+2    c     85   19    bba     g
+1    b     90   20    bca     f
