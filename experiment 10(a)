@@ -1,0 +1,83 @@
+Aim
+To write and execute a Python program to load, clean and explore data using Pandas and NumPy libraries.
+2. Algorithm
+Start the program.
+Import Pandas and NumPy libraries.
+Create a dataset containing Team, Runs and Wickets.
+Convert the dataset into a DataFrame.
+Display the original data.
+Check missing values using isna().sum().
+Fill missing values with the mean using fillna().
+Display the cleaned data.
+Display the first five rows using head().
+Display dataset information using info().
+Display statistical summary using describe().
+Display the shape of the dataset using shape.
+Stop the program.
+3. Source Code
+
+import pandas as pd
+import numpy as np
+
+# 1. Load Data
+data = {
+    "Team": ["CSK", "MI", "RCB", "KKR", "CSK"],
+    "Runs": [180, np.nan, 200, 175, 190],
+    "Wickets": [5, 7, None, 6, 8]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Data:\n", df)
+
+# 2. Check Missing Values
+print("\nMissing Values:\n", df.isna().sum())
+
+# 3. Clean Data
+# Fill missing values with mean
+df["Runs"] = df["Runs"].fillna(df["Runs"].mean())
+df["Wickets"] = df["Wickets"].fillna(df["Wickets"].mean())
+
+print("\nAfter Cleaning:\n", df)
+
+# 4. Explore Data
+print("\nFirst 5 Rows:\n", df.head())
+
+print("\nInfo:")
+df.info()
+
+print("\nStatistical Summary:\n", df.describe())
+
+print("\nShape (rows, columns):", df.shape)
+
+Output 
+Original Data:
+   Team   Runs  Wickets
+0   CSK  180.0      5.0
+1    MI    NaN      7.0
+2   RCB  200.0      NaN
+3   KKR  175.0      6.0
+4   CSK  190.0      8.0
+
+Missing Values:
+Team       0
+Runs       1
+Wickets    1
+
+After Cleaning:
+   Team    Runs  Wickets
+0   CSK  180.00      5.0
+1    MI  186.25      7.0
+2   RCB  200.00      6.5
+3   KKR  175.00      6.0
+4   CSK  190.00      8.0
+
+First 5 Rows:
+   Team    Runs  Wickets
+0   CSK  180.00      5.0
+1    MI  186.25      7.0
+2   RCB  200.00      6.5
+3   KKR  175.00      6.0
+4   CSK  190.00      8.0
+
+Shape (rows, columns): (5, 3)
