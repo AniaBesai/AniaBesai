@@ -1,0 +1,50 @@
+Aim
+To write and execute Python programs to demonstrate Object-Oriented Programming (OOP) concepts using classes, objects, constructors and methods.
+2. Algorithm
+Start the program.
+Define a class named Stud.
+Accept marks of five subjects from the user.
+Calculate the total and average marks.
+Define a method to display the total and average.
+Define another method to calculate the grade based on the average.
+Create an object of the class.
+Call the methods using the object.
+Display the output.
+Stop the program.
+
+
+class op:
+    x = int(input("enter the value of x:"))
+    y = int(input("enter the value of y:"))
+
+    def add(self):
+        print("addition: ", self.x + self.y)
+
+    def sub(self):
+        print("subtraction: ", self.x - self.y)
+
+    def mul(self):
+        print("multiplication: ", self.x * self.y)
+
+    def div(self):
+        print("division: ", self.x / self.y)
+
+    def mod(self):
+        print("modulus: ", self.x % self.y)
+
+
+s = op()
+s.add()
+s.sub()
+s.mul()
+s.div()
+s.mod()
+
+enter the value of x: 5
+enter the value of y: 2
+
+addition: 7
+subtraction: 3
+multiplication: 10
+division: 2.5
+modulus: 1
