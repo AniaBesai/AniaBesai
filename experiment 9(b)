@@ -1,0 +1,78 @@
+Aim
+To write and execute a Python program using Pandas and Matplotlib libraries to create different types of visualizations such as line charts, bar charts and histograms.
+2. Algorithm
+Start the program.
+Import Pandas and Matplotlib libraries.
+Create a dictionary containing student names, marks and study hours.
+Convert the dictionary into a DataFrame using pd.DataFrame().
+Display the DataFrame.
+Create a line chart using plt.plot().
+Add title, X-axis label, Y-axis label and grid.
+Create a bar chart using plt.bar().
+Display the values on the bars using plt.text().
+Create a histogram using plt.hist() to show marks distribution.
+Calculate the mean of marks using df['marks'].mean().
+Display the mean value using a vertical line.
+Display all the graphs using plt.show().
+Stop the program.
+
+source code:
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = {
+    'name': ['a', 'b', 'c', 'd', 'e'],
+    'marks': [100, 70, None, 40, 50],
+    'study_hours': [6, 2, 3, 1, 5]
+}
+
+df = pd.DataFrame(data)
+print(df)
+
+from matplotlib.lines import lineStyles
+
+# line chart
+import matplotlib.pyplot as plt
+
+plt.plot(df['name'], df['marks'], marker='D',
+         linestyle='--', linewidth=3)
+plt.title('student marks chart')
+plt.xlabel('students')
+plt.ylabel('marks')
+plt.grid(True)
+plt.show()
+
+# bar chart
+plt.bar(df['name'], df['marks'])
+
+for i, val in enumerate(df['marks']):
+    plt.text(i, val, str(val), ha='center', va='bottom')
+
+plt.title('student marks chart')
+plt.xlabel('students')
+plt.ylabel('marks')
+plt.ylim(0, 100)
+plt.grid(axis='y')
+plt.show()
+
+# histogram
+plt.hist(df['marks'], bins=5, edgecolor='black')
+plt.title('marks distribution')
+plt.xlabel('marks')
+plt.ylabel('frequency')
+plt.grid(True)
+plt.show()
+
+mean_value = df['marks'].mean()
+plt.axvline(mean_value, color='r',
+            linestyle='dashed', linewidth=2)
+plt.show()
+
+Output
+Output 1: DataFrame
+  name  marks  study_hours
+0    a  100.0            6
+1    b   70.0            2
+2    c    NaN            3
+3    d   40.0            1
+4    e   50.0            5
